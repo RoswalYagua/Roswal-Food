@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>Roswal - Food</title>
+    <link rel="stylesheet" href="./css/output.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body>
+    <nav x-data="{ open: false }" class="sticky top-0 z-20 w-full bg-secondary text-gray-100 shadow-2xl">
+        <div class="p-3 bg-secondary text-white flex justify-between items-center">
+            <div>
+                <p class="text-2xl">Roswal -<span class="text-primary font-bold ml-2">FOOD</span></p>
+            </div>
+            <div class="text-2xl cursor-pointer" @click="open = true">&equiv;</div>
+        </div>
+
+        <div x-show="open" @click.away="open = false">
+            <div class="mx-2 my-2">
+                <input class="form-control" type="search" placeholder="Búsqueda">
+            </div>
+            <div class="py-2 flex justify-around items-center flex-wrap">
+                <div class="flex space-x-2">
+                    Precio:
+                    <div class="ml-2">$</div>
+                    <div class="text-primary">$$</div>
+                    <div>$$$</div>
+                    <div>$$$$</div>
+                </div>
+                <div class="flex">
+                    <div class="mr-2">
+                        Calificación
+                    </div>
+                    <div class="text-primary">&starf; </div>
+                    <div class="text-primary">&starf; </div>
+                    <div class="text-primary">&starf; </div>
+                    <div class="text-primary">&starf; </div>
+                    <div>&star; </div>
+                </div>
+                <div>
+                    <button class="btn bg-primary">Filtrar</button>
+                </div>
+            </div>
+        </div>
+        
+    </nav>
+
+    <main class="pb-8">
+        <div class="h-56 md:h-80 md:bg-center bg-no-repeat bg-cover bg-center saturate-50 relative" style="background-image: url('https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+            <div class="w-full h-full text-white absolute top-0 flex flex-col justify-center items-center md:items-start md:justify-end md:pb-28 md:pl-5 md:space-y-2">
+                <h1 class="text-2xl font-semibold px-5 md:text-3xl">"¡Sabor que Despierta tus Sentidos! </h1>
+                <p class="text-sm font-medium text-primary md:text-lg">Roswal Food - Tu Destino para una Experiencia </p>
+                <div class="btn m-0 mt-3 px-5 py-3 bg-primary cursor-pointer hover:bg-yellow-500 duration-300">Be Customer</div>
+            </div>
+        </div>
+
+        <!-- CARDS DE ALIMENTOS -->
+        <div class="flex flex-col gap-10 px-8 py-10 lg:flex-row lg:flex-wrap lg:justify-around">
+            
+            <div class="card">
+                <div class="">
+                    <img class="w-full rounded md:object-cover md:object-center md:rounded-r-none md:h-[184px] lg:rounded-t-lg lg:rounded-b-none" src="./img/proxy-image.png" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h2 class="text-xl font-medium my-2">BBQ Burger:</h2>
+                    <p>Beef, bacon, cheddar cheese, caramelized onion and barbecue sauce.</p>
+                    <div class="mt-5 font-medium">10.00 CL$</div>
+                    <div class="text-yellow-500">&starf;&starf;&starf;&starf;&star; / 36 reviews</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="">
+                    <img class="w-screen rounded md:object-cover  md:object-center md:rounded-r-none md:h-[184px] lg:rounded-t-lg lg:rounded-b-none md:w-[276px]" src="./img/pizza-image.png" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h2 class="text-xl font-medium my-2">Margarita Pizza:</h2>
+                    <p>Thin dough, tomato sauce, mozzarella, basil and fresh tomato.</p>
+                    <div class="mt-5 font-medium">16.00 CL$</div>
+                    <div class="text-yellow-500">&starf;&starf;&starf;&starf;&starf; / 80 reviews</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="">
+                    <img class="w-screen max-h-[466px] rounded md:object-cover  md:object-center md:rounded-r-none md:h-[184px] md:w-[276px] lg:rounded-t-lg lg:rounded-b-none" src="./img/taco-image.png" alt="">
+                </div>
+
+                <div class="card-content h-full">
+                    <h2 class="text-xl font-medium my-2">Carnitas Taco:</h2>
+                    <p>Pork carnitas, onion, cilantro and green sauce.</p>
+                    <div class="mt-5 font-medium">7.00 CL$</div>
+                    <div class="text-yellow-500">&starf;&starf;&starf;&starf;&star; / 50 reviews</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="">
+                    <img class="w-screen rounded md:object-cover  md:object-center md:rounded-r-none md:h-[184px] md:w-[276px] lg:rounded-t-lg lg:rounded-b-none" src="./img/sushi-image.jpeg" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h2 class="text-xl font-medium my-2">Salmon Maki:</h2>
+                    <p>Fresh salmon, avocado and cucumber rolled in rice and nori seaweed.</p>
+                    <div class="mt-5 font-medium">5.00 CL$</div>
+                    <div class="text-yellow-500">&starf;&starf;&starf;&starf;&starf; / 200 reviews</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="">
+                    <img class="w-full rounded md:object-cover  md:object-center md:rounded-r-none md:h-[184px] lg:rounded-t-lg lg:rounded-b-none" src="./img/hotDog-image.png" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h2 class="text-xl font-medium my-2">Classic Hot Dog:</h2>
+                    <p>Sausage, soft bun, mustard, ketchup and chopped onion.</p>
+                    <div class="mt-5 font-medium">6.500 CL$</div>
+                    <div class="text-yellow-500">&starf;&starf;&starf;&starf;&star; / 36 reviews</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="">
+                    <img class="w-screen max-h-[466px] rounded md:object-cover  md:object-center md:rounded-r-none md:h-[184px] md:w-[276px] lg:rounded-t-lg lg:rounded-b-none" src="./img/torta-image.png" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h2 class="text-xl font-medium my-2">Milanese Cake:</h2>
+                    <p>Milanese with meat, avocado, beans, cheese and sauce.</p>
+                    <div class="mt-5 font-medium">3.990 CL$</div>
+                    <div class="text-yellow-500">&starf;&starf;&starf;&starf;&star; / 43 reviews</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="">
+                    <img class="w-screen rounded md:object-cover  md:object-center md:rounded-r-none md:h-[184px] md:w-[276px] lg:rounded-t-lg lg:rounded-b-none" src="./img/burrito-image.png" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h2 class="text-xl font-medium my-2">Vegetarian Burrito:</h2>
+                    <p>Roasted vegetables, guacamole, rice and cheese.</p>
+                    <div class="mt-5 font-medium">5.500 CL$</div>
+                    <div class="text-yellow-500">&starf;&starf;&starf;&starf;&starf; / 120 reviews</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="">
+                    <img class="w-screen max-h-[466px] rounded md:object-cover  md:object-center md:rounded-r-none md:h-[184px] md:w-[276px] lg:rounded-t-lg lg:rounded-b-none" src="./img/pollo-image.png" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h2 class="text-xl font-medium my-2">Spicy Chicken:</h2>
+                    <p>Chicken pieces seasoned with spicy spices and accompanied by spicy sauces.</p>
+                    <div class="mt-5 font-medium">10.00 CL$</div>
+                    <div class="text-yellow-500">&starf;&starf;&starf;&starf;&star; / 36 reviews</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="">
+                    <img class="w-screen max-h-[466px] rounded md:object-cover  md:object-center md:rounded-r-none md:h-[184px] md:w-[276px] lg:rounded-t-lg lg:rounded-b-none" src="./img/china-image.png" alt="">
+                </div>
+
+                <div class="card-content">
+                    <h2 class="text-xl font-medium my-2">Shrimp Pad Thai:</h2>
+                    <p>Rice noodles stir-fried with shrimp, peanuts, bean sprouts and cilantro.</p>
+                    <div class="mt-5 font-medium">12.00 CL$</div>
+                    <div class="text-yellow-500">&starf;&starf;&starf;&starf;&star; / 77 reviews</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full h-auto relative flex justify-center items-center mt-16">
+            <div class="w-full h-100 bg-no-repeat bg-cover bg-center brightness-50 md:h-60 lg:h-44 bg-fixed" style="background-image: url('https://images.pexels.com/photos/375889/pexels-photo-375889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+            </div>
+            <p class="absolute text-white text-center text-2xl font-bold">You are going to eat!! <br> Be part of Us</p>
+        </div>
+
+        <!-- Formulario -->
+        <div class="flex items-center flex-col p-10 lg:flex-row-reverse justify-around">
+            <div class="w-[20rem] md:hidden lg:flex">
+                <div class="w-full h-[20rem] bg-no-repeat bg-contain bg-center" style="background-image: url('./img/clienteRoswalFood.png');"></div>
+            </div>
+            <div class="px-7 py-3 mt-20 shadow-2xl rounded-lg md:w-4/5 lg:w-[403px]">
+                <h3 class="text-2xl text-center my-5 text-primary font-semibold">Become Customer</h3>
+                <div>
+                    <div class="my-2"> Name </div>
+                    <input class="form-control" type="text" placeholder="Nombre">
+                </div>
+                <div>
+                    <div class="my-2"> Email </div>
+                    <input class="form-control" type="email" placeholder="Email">
+                </div>
+                <div>
+                    <div class="my-2"> Comments </div>
+                    <textarea class="form-control resize-none" name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <button class="btn my-2">Enviar</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-gradient-to-t from-primary to-gray-50 px-5 pb-5 pt-20 flex flex-col">
+        <div class="flex flex-wrap justify-between">
+            <div class="w-[326px]">
+                <p class="text-xl font-medium mb-2">Contact Us:</p>
+                <p class="text-secondary">Dirección: Longitud: 122.4194° O</p>
+                <p class="text-secondary">Teléfono: 31241568</p>
+                <p class="text-secondary">Correo Electrónico: roswalYp123@gmail.com</p>
+            </div>
+
+            <div class="w-[380px] flex flex-wrap mt-6 items-center">
+                <a class="hover:text-secondary px-2" href="/">Inicio</a>
+                <a class="hover:text-secondary px-2" href="/">Productos</a>
+                <a class="hover:text-secondary px-2" href="/">Contacto</a>
+                <a class="hover:text-secondary px-2" href="/">Términos y Condiciones</a>
+                <a class="hover:text-secondary px-2" href="/">Política de Privacidad</a>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row-reverse">
+            <div class="my-6 md:mx-6">
+                <p class="text-xl font-medium text-center mb-2">Become Customer</p>
+                <form class="flex flex-wrap justify-center md:flex-nowrap" action="/" method="post">
+                    <input class="form-control w-80" type="email" name="email" placeholder="Tu correo electrónico" required>
+                    <button class="btn m-0" type="submit">Suscribir</button>
+                </form>
+            </div>
+    
+            <div class="pt-5 md:flex md:felx-col md:flex-wrap lg:flex-nowrap lg:space-x-2">
+                <span class="">&copy; 2024 roswal-food <span class="border-r-2 border-secondary mx-2 md:hidden lg:block"></span> <br class="hidden md:flex lg:hidden"> Todos los derechos reservados.</span>
+                <a class="mr-2 hover:text-secondary" href="/">Términos de Servicio</a>
+                <a class="hover:text-secondary" href="/">Política de Privacidad</a>
+            </div>
+    
+            <div class="md:pt-5 md:mr-5 md:flex md:flex-wrap md:justify-evenly">
+                <a class="mr-3" href="#" target="_blank"><i class="text-blue-900 fa fa-facebook"></i><span class="ml-1">Facebook</span></a>
+                <a class="mr-3" href="#" target="_blank"><i class="text-blue-500 fa fa-twitter"></i><span class="ml-1">Twitter</span></a>
+                <a class="mr-3" href="#" target="_blank"><i class="text-pink-600 fa fa-instagram"></i><span class="ml-1">Instagram</span></a>
+                <a class="mr-3" href="#" target="_blank"><i class="fa fa-github"></i><span class="ml-1">GitHub</span></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

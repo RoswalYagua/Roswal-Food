@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .form-control{
+        @apply w-full leading-snug text-gray-800 py-1 px-4 rounded border-blue-300 bg-gray-200 placeholder:text-secondary focus:outline-none focus:ring-2;
+    }
+    .btn{
+        @apply rounded shadow-xl py-1 px-4 bg-gray-500 mx-auto block hover:shadow-none hover:bg-gray-700 hover:text-white;
+    }
+    .card{
+        @apply w-full h-full flex flex-col items-center md:flex-row lg:flex-col md:shadow-xl md:rounded cursor-pointer lg:w-[276px] lg:h-[416px];
+    }
+    .card-content{
+        @apply w-4/5 h-full bg-white text-left shadow-lg relative -top-5 px-5 pb-5 rounded-lg flex items-start flex-col md:justify-center md:shadow-none md:p-3 md:top-0 md:w-3/4 lg:w-full
+    }
+}
